@@ -7,6 +7,8 @@
 # https://github.com/deboc/py-faster-rcnn/tree/master/help
 # https://github.com/deboc/py-faster-rcnn/blob/master/lib/datasets/inria.py
 # https://github.com/rbgirshick/py-faster-rcnn/issues/243
+# use easydict 1.6+
+# conda install -c verydeep easydict
 # --------------------------------------------------------
 
 import os
@@ -26,6 +28,7 @@ from fast_rcnn.config import cfg
 
 class hands(imdb):
     def __init__(self, image_set, devkit_path):
+        print(cfg)
         imdb.__init__(self, image_set)
         self._image_set = image_set
         self._devkit_path = os.path.join(cfg.DATA_DIR, devkit_path)
@@ -33,7 +36,7 @@ class hands(imdb):
         # self._classes = ('__background__',
         #                 'hand')
         self._classes = ('__background__', # always index 0
-                         'aeroplane', 'bicycle', 'bird', 'boat',
+                         'hand', 'bicycle', 'bird', 'boat',
                          'bottle', 'bus', 'car', 'cat', 'chair',
                          'cow', 'diningtable', 'dog', 'horse',
                          'motorbike', 'person', 'pottedplant',

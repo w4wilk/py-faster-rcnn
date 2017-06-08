@@ -33,7 +33,7 @@ for year in ['2015']:
         __sets[name] = (lambda split=split, year=year: coco(split, year))
 
 # Set up hands_<split>
-for split in ['train', 'test']:
+for split in ['train', 'test', 'train_asl', 'train_vgghands']:
     name = '{}_{}'.format('hands', split)
     __sets[name] = (lambda split=split: hands(split, 'HANDSdevkit'))
 
